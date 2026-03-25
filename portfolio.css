@@ -1,0 +1,436 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.text h1 {
+    font-size: 70px;
+    font-weight: 700;
+}
+
+/* NEW: Hamburger menu button styling (hidden on desktop) */
+.hamburger {
+    display: none;
+    font-size: 35px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: black;
+}
+
+.social_medias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.social_medias a {
+    width: 25px;
+    height: 25px;
+    color: black;
+}
+
+.social_medias svg:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.vieworts {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    top: 130px;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.backdrop_image {
+    overflow: hidden;
+    height: 30rem;
+    width: 100%;
+}
+
+.backdrop_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.main_profile {
+    overflow: hidden;
+    border: black solid 1px;
+    width: auto;
+    position: absolute;
+    bottom: 35%;
+}
+
+.main_profile img {
+    width: 30%;
+    height: 30%;
+    object-fit: cover;
+}
+
+.linktree {
+    background-color: rgb(252, 251, 244);
+    padding: 5px;
+    border-radius: 20px;
+    border: rgb(218, 206, 206) solid 1px;
+}
+
+.profile_info {
+    min-height: 40vh;
+    width: 100%;
+    padding: 40px;
+}
+
+.name h1 {
+    font-weight: bold;
+}
+
+.greetings p {
+    text-align: justify;
+}
+
+.navbars {
+    border-bottom: black solid 1px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.navbars li {
+    list-style: none;
+    text-decoration: none;
+    color: rgb(136, 122, 122);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navbars li:hover {
+    color: rgb(0, 0, 0);
+}
+
+.navbars li.active {
+    color: black;
+}
+
+.about_editing_viewports {
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px;
+}
+
+.editing h1 {
+    font-weight: bold;
+}
+
+.decription p {
+    text-align: justify;
+}
+
+.my_works {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.works1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.works1 iframe {
+    border-radius: 25px;
+    width: 100% !important; 
+    max-width: 500px; 
+}
+
+/* =========================================
+   RESPONSIVE DESIGN ADDITIONS 
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .text h1 { font-size: 50px; }
+    .backdrop_image { height: 20rem; }
+    .profile, .profile_info, .about_editing_viewports { padding: 30px; }
+}
+
+@media (max-width: 768px) {
+    /* Header & Hamburger Adjustments */
+    .header {
+        flex-wrap: wrap; /* Allows the social links to drop down */
+        padding: 15px 20px;
+    }
+    
+    .text h1 { font-size: 35px; }
+
+    .hamburger {
+        display: block; /* Shows the button on mobile */
+    }
+
+    .social_medias {
+        display: none; /* Hides the socials by default on mobile */
+        width: 100%; /* Makes them take full width when opened */
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+    }
+
+    /* This class will be added by JavaScript to show the menu */
+    .social_medias.active {
+        display: flex; 
+    }
+    
+    .vieworts { top: 100px; }
+    .backdrop_image { height: 15rem; }
+    .profile, .profile_info, .about_editing_viewports {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .navbars {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 5px;
+    }
+    
+    .navbars li {
+        width: 45%;
+        text-align: center;
+    }
+    
+    /* Center the Works area on mobile perfectly */
+    .my_works {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Forces perfect centering */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbars li { width: 100%; }
+}
+
+
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.text h1{
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.social_medias{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+}
+
+
+.social_medias a{
+    width: 25px;
+    height: 25px;
+    color: black;
+}
+
+.social_medias svg:hover{
+    color: red;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+
+.vieworts{
+    height: auto;
+    width: 100%;;
+    flex-direction: column;
+    position: relative;
+    top: 130px;
+}
+
+
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.backdrop_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.backdrop_image{
+    overflow: hidden;
+    height: 30rem;
+    width: 100%;
+}
+
+
+.main_profile{
+    overflow: hidden;
+    border: black solid 1px;
+    width: auto;
+    position: absolute;
+    bottom: 35%;
+
+}
+
+.main_profile img{
+    width: 30%;
+    height: 30%;
+    object-fit: cover;
+}
+
+.linktree{
+    background-color: rgb(252, 251, 244);
+    padding: 5px;
+    border-radius: 20px;
+    border: rgb(218, 206, 206) solid 1px;
+}
+
+
+.profile_info{
+    min-height: 40vh;
+    width: 100%;
+    padding: 40px;
+}
+
+.name h1{
+    font-weight: bold;
+}
+.greetings p{
+    text-align: justify;
+}
+
+
+.navbars{
+    border-bottom: black solid 1px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 60px;
+    padding: 20px;
+
+}
+
+.navbars li{
+    list-style: none;
+        text-decoration: none;
+        color: rgb(136, 122, 122);
+        font-weight: bold;
+        cursor: pointer;
+}
+.navbars li:hover{
+    color: rgb(0, 0, 0);
+}
+.navbars li.active{
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+.about_editing_viewports{
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px;
+}
+
+.editing h1{
+    font-weight: bold;
+}
+
+.decription p{
+    text-align: justify;
+}
+
+.my_works {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.works1 {
+    
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.works1 iframe {
+    border-radius: 25px;
+    width: 100% !important; 
+    max-width: 500px; 
+}
